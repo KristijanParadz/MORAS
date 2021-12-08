@@ -1,0 +1,10 @@
+CHIP Bool2{
+    IN x, y, z;
+    OUT out;
+
+    PARTS:
+    Not(in = y, out=noty);
+    Not(in = z, out=notz);
+    And(a=x, b=noty,out=xAndNoty);
+    And(a=xAndNoty, b=notz,out=out);
+}
