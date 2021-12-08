@@ -1,0 +1,72 @@
+CHIP Mult{
+    IN a[16], b[16];
+    OUT out[16];
+
+    PARTS:
+
+    Mux16(a=false ,b=a ,sel=b[0] ,out=c0);
+    BitShiftL(in=a, out=proslijedi0);
+
+    Mux16(a=false ,b=proslijedi0 ,sel=b[1] ,out=c1);
+    BitShiftL(in=proslijedi0, out=proslijedi1);
+   
+    Mux16(a=false ,b=proslijedi1 ,sel=b[2] ,out=c2);
+    BitShiftL(in=proslijedi1, out=proslijedi2);
+
+    Mux16(a=false ,b=proslijedi2 ,sel=b[3] ,out=c3);
+    BitShiftL(in=proslijedi2, out=proslijedi3);
+    
+    Mux16(a=false ,b=proslijedi3 ,sel=b[4] ,out=c4);
+    BitShiftL(in=proslijedi3, out=proslijedi4);
+
+    Mux16(a=false ,b=proslijedi4 ,sel=b[5] ,out=c5);
+    BitShiftL(in=proslijedi4, out=proslijedi5);
+    
+    Mux16(a=false ,b=proslijedi5 ,sel=b[6] ,out=c6);
+    BitShiftL(in=proslijedi5, out=proslijedi6);
+    
+    Mux16(a=false ,b=proslijedi6 ,sel=b[7] ,out=c7);
+    BitShiftL(in=proslijedi6, out=proslijedi7);
+    
+    Mux16(a=false ,b=proslijedi7 ,sel=b[8] ,out=c8);
+    BitShiftL(in=proslijedi7, out=proslijedi8);
+   
+    Mux16(a=false ,b=proslijedi8 ,sel=b[9] ,out=c9);
+    BitShiftL(in=proslijedi8, out=proslijedi9);
+    
+    Mux16(a=false ,b=proslijedi9 ,sel=b[10] ,out=c10);
+    BitShiftL(in=proslijedi9, out=proslijedi10);
+    
+    Mux16(a=false ,b=proslijedi10 ,sel=b[11] ,out=c11);
+    BitShiftL(in=proslijedi10, out=proslijedi11);
+    
+    Mux16(a=false ,b=proslijedi11 ,sel=b[12] ,out=c12);
+    BitShiftL(in=proslijedi11, out=proslijedi12);
+    
+    Mux16(a=false ,b=proslijedi12 ,sel=b[13] ,out=c13);
+    BitShiftL(in=proslijedi12, out=proslijedi13);
+    
+    Mux16(a=false ,b=proslijedi13 ,sel=b[14] ,out=c14);
+    BitShiftL(in=proslijedi13, out=proslijedi14);
+    
+    Mux16(a=false ,b=proslijedi14 ,sel=b[15] ,out=c15);
+
+
+    Add16(a=c0 ,b=c1 ,out=rez1 );
+    Add16(a=c2 ,b=c3 ,out=rez2 );
+    Add16(a=c4 ,b=c5 ,out=rez3 );
+    Add16(a=c6 ,b=c7 ,out=rez4 );
+    Add16(a=c8 ,b=c9 ,out=rez5 );
+    Add16(a=c10 ,b=c11 ,out=rez6 );
+    Add16(a=c12 ,b=c13 ,out=rez7 );
+    Add16(a=c14 ,b=c15 ,out=rez8 );
+
+    Add16(a=rez1 ,b=rez2 ,out=rezz1 );
+    Add16(a=rez3 ,b=rez4 ,out=rezz2 );
+    Add16(a=rez5 ,b=rez6 ,out=rezz3 );
+    Add16(a=rez7 ,b=rez8 ,out=rezz4 );
+
+    Add16(a=rezz1 ,b=rezz2 ,out=rezultat1 );
+    Add16(a=rezz3 ,b=rezz4 ,out=rezultat2 );
+    Add16(a=rezultat1 ,b=rezultat2 ,out=out );
+}
