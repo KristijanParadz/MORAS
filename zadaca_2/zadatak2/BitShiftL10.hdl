@@ -1,0 +1,19 @@
+CHIP BitShiftL10{
+    IN in[10];
+    OUT out[10];
+
+    PARTS:
+    
+    Mux(a=in[0], b=in[0] ,sel=false,out=out[1]);
+    Mux(a=in[1], b=in[0] ,sel=false,out= out[2]);
+    Mux(a=in[2], b=in[0] ,sel=false,out= out[3]);
+    Mux(a=in[3], b=in[0] ,sel=false,out= out[4]);
+    
+    Mux(a=in[4], b=in[0] ,sel=false,out= out[5]);
+    Mux(a=in[5], b=in[0] ,sel=false,out= out[6]);
+    Mux(a=in[6], b=in[0] ,sel=false,out= out[7]);
+    Mux(a=in[7], b=in[0] ,sel=false,out= out[8]);
+    
+    Mux(a=in[8], b=in[0] ,sel=false,out= out[9]);
+    Mux(a=in[9], b=in[0] ,sel=false,out= out[0]);
+}

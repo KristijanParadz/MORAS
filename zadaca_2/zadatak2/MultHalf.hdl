@@ -1,0 +1,13 @@
+CHIP MultHalf{
+    IN a[16], b[16];
+    OUT out[16];
+
+
+    PARTS:
+    Xor(a=a[15] ,b=b[15] ,out=out[15]);
+
+    Mult10(a=a[0..9],b=b[0..9],out=out[0..9]);
+
+    Add5(a=a[10..14],b=b[10..14],out=pomoc);
+    Add5(a=pomoc,b[0]=true, b[4]=true,out=out[10..14]);
+}

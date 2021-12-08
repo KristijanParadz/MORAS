@@ -1,0 +1,45 @@
+CHIP Mult10{
+    IN a[10], b[10];
+    OUT out[10];
+
+    PARTS:
+    Mux10(a=false ,b=a ,sel=b[0] ,out=c0);
+    BitShiftL10(in=a, out=proslijedi0);
+
+    Mux10(a=false ,b=proslijedi0 ,sel=b[1] ,out=c1);
+    BitShiftL10(in=proslijedi0, out=proslijedi1);
+   
+    Mux10(a=false ,b=proslijedi1 ,sel=b[2] ,out=c2);
+    BitShiftL10(in=proslijedi1, out=proslijedi2);
+
+    Mux10(a=false ,b=proslijedi2 ,sel=b[3] ,out=c3);
+    BitShiftL10(in=proslijedi2, out=proslijedi3);
+    
+    Mux10(a=false ,b=proslijedi3 ,sel=b[4] ,out=c4);
+    BitShiftL10(in=proslijedi3, out=proslijedi4);
+
+    Mux10(a=false ,b=proslijedi4 ,sel=b[5] ,out=c5);
+    BitShiftL10(in=proslijedi4, out=proslijedi5);
+    
+    Mux10(a=false ,b=proslijedi5 ,sel=b[6] ,out=c6);
+    BitShiftL10(in=proslijedi5, out=proslijedi6);
+    
+    Mux10(a=false ,b=proslijedi6 ,sel=b[7] ,out=c7);
+    BitShiftL10(in=proslijedi6, out=proslijedi7);
+    
+    Mux10(a=false ,b=proslijedi7 ,sel=b[8] ,out=c8);
+    BitShiftL10(in=proslijedi7, out=proslijedi8);
+   
+    Mux10(a=false ,b=proslijedi8 ,sel=b[9] ,out=c9);
+    
+    Add10(a=c1,b=c2,out=rez1);
+    Add10(a=c3,b=c4,out=rez2);
+    Add10(a=c5,b=c6,out=rez3);
+    Add10(a=c7,b=c8,out=rez4);
+    Add10(a=rez1, b=rez2, out=rezz1);
+    Add10(a=rez3, b=rez4, out=rezz2);
+    Add10(a=rezz1, b=rezz2, out=rezzz);
+    Add10(a=rezzz, b=c9,out=zbroj);
+    Add10(a=zbroj, b=c0, out=out);  
+
+}

@@ -1,0 +1,12 @@
+CHIP Add5{
+    IN a[5], b[5];
+    OUT out[5];
+
+    PARTS:
+    HalfAdder(a=a[0],b=b[0],sum=out[0],carry=c);
+	FullAdder(a=a[1],b=b[1],c=c,sum=out[1],carry=d);
+	FullAdder(a=a[2],b=b[2],c=d,sum=out[2],carry=e);
+	FullAdder(a=a[3],b=b[3],c=e,sum=out[3],carry=f);
+	FullAdder(a=a[4],b=b[4],c=f,sum=out[4],carry=drop);
+
+}
