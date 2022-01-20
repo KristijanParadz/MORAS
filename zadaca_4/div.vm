@@ -1,0 +1,32 @@
+function div 2
+	push constant 0
+	//q
+	pop local 0 
+	push argument 0
+	//r
+	pop local 1 
+	
+	label pocetak_petlje
+		push local 1
+		push argument 1
+		lt
+		if-goto kraj_petlje
+		push local 0
+		push constant 1
+		add
+		pop local 0
+		push local 1
+		push argument 1
+		sub
+		pop local 1
+		goto pocetak_petlje
+	
+	
+	
+	
+	
+	label kraj_petlje
+		push local 0
+		return
+		
+
