@@ -19,6 +19,6 @@ function fib.fibonacci 0
 	
 	
 	label retargument
-		push argument 1
+		push argument 0
 		return
 	
