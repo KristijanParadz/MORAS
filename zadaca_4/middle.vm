@@ -1,4 +1,4 @@
-function middle.mid 0
+function mid 0
 	push argument 0
 	push argument 1
 	gt
