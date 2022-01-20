@@ -1,4 +1,4 @@
-function fib.fibonacci 0
+function fibonacci 0
 	push constant 2
 	push argument 0
 	gt
