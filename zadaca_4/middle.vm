@@ -1,0 +1,43 @@
+function middle.mid 0
+	push argument 0
+	push argument 1
+	gt
+	if-goto prvi_slucaj
+	//else
+	push argument 0
+	push argument 2
+	gt
+	if-goto reta
+	push argument 1
+	push argument 2
+	gt
+	if-goto retc
+	push argument 1
+	return
+	
+	
+	
+	
+	label prvi_slucaj
+		push argument 1
+		push argument 2
+		gt
+		if-goto retb
+		push argument 0
+		push argument 2
+		gt
+		if-goto retc
+		push argument 0
+		return
+	
+	label reta
+		push argument 0
+		return
+	
+	label retb
+		push argument 1
+		return
+		
+	label retc
+		push argument 2
+		return
